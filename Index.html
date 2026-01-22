@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Xynproxy Blooket API</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .container {
+      background: #141426;
+      padding: 20px;
+      border-radius: 14px;
+      width: 95%;
+      max-width: 750px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      text-align: center;
+      font-size: 22px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 280px;
+      resize: vertical;
+      border-radius: 10px;
+      border: none;
+      padding: 14px;
+      font-size: 13px;
+      font-family: monospace;
+      outline: none;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+      background: #0e0e1c;
+      color: #cfcfff;
+      white-space: pre;
+      overflow: auto;
+      user-select: text;
+    }
+
+    textarea[readonly] {
+      cursor: default;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(135deg, #5b7cff, #7a6cff);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .status {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #7dff9b;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Xynproxy Blooket API</h1>
+
+  <!-- VIEW ONLY CODE -->
+  <textarea id="codeBox" readonly>
+PASTE YOUR SUPER LONG CODE HERE
+  </textarea>
+
+  <button onclick="copyCode()">Copy Code</button>
+  <div id="status" class="status">Copied to clipboard ✓</div>
+</div>
+
+<script>
+  function copyCode() {
+    const textarea = document.getElementById("codeBox");
+    textarea.focus();
+    textarea.select();
+
+    try {
+      document.execCommand("copy");
+      const status = document.getElementById("status");
+      status.style.display = "block";
+      setTimeout(() => status.style.display = "none", 1500);
+    } catch {
+      alert("Copy failed. Please select and copy manually.");
+    }
+  }
+</script>
+
+</body>
+</html>
